@@ -1,0 +1,105 @@
+#include <iostream>
+using namespace std;
+class clsPerson
+{
+private :
+	int _ID ;
+	string _Phone;
+	string _FirstName, _LastName, _Email;
+	string _Subject;
+	string _Body;
+	
+public:
+
+	clsPerson( int ID, string FirstName, string LastName, string Email, string Phone)
+	{
+		_ID = ID;
+		_Phone = Phone;
+		_FirstName = FirstName;
+		_LastName = LastName;
+		_Email = Email;
+	}
+
+	void PrintInfo()
+	{
+		cout << "Info : " << endl;
+		cout << "______________________________\n";
+		cout << "ID :    " << _ID << endl;
+		cout << "FirstName :    " << _FirstName << endl;
+		cout << "LastName :    " << _LastName << endl;
+		cout << "FullName :    " << _FirstName + " " + _LastName << endl;
+		cout << "Email :    " << _Email << endl;
+		cout << "Phone :    " << _Phone << endl;
+		cout << "______________________________\n";
+	}
+
+	void SendEmail(string Subject, string Body)
+	{
+		cout << "The following message sent successful to email : " << _Email << endl;
+		cout << "Subject : " << Subject << endl;
+		cout << "Budy : " << Body << endl;
+
+	}
+
+	void SendSMS(string Message)
+	{
+		cout << "The Following SMS sent successfuly to Phone : " << _Phone << endl;
+		cout << Message << endl;
+
+	}
+
+	void setFirstName(string FirstName)
+	{
+		_FirstName = FirstName;
+	}
+
+	void setLastName(string LastName)
+	{
+		_LastName = LastName;
+	}
+
+	void setEmail(string Email)
+	{
+		_Email = Email;
+	}
+
+	void setPhone(string Phone)
+	{
+		_Phone = Phone;
+	}
+
+	int ID()
+	{
+		return _ID;
+	}
+	string Phone()
+	{
+		return _Phone;
+	}
+	string FirstName()
+	{
+		return _FirstName;
+	}
+	string LastName()
+	{
+		return _LastName;
+	}
+	string FullName()
+	{
+		return _FirstName + " " + _LastName;
+	}
+	string Email()
+	{
+		return _Email;
+	}
+	
+};
+int main()
+{
+	clsPerson Person1( 10 , "Mohammed", "Abu- Hadhoud","my@gmail.com","0098387727");
+	Person1.PrintInfo();
+	Person1.SendEmail("Hi", "How are you?");
+	Person1.SendSMS("How are you?");
+
+	system("pause>0");
+}
